@@ -1,4 +1,4 @@
-package com.map.resource;
+package com.map.controller;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
