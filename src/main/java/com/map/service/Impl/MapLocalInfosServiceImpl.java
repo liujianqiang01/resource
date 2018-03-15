@@ -15,7 +15,7 @@ public class MapLocalInfosServiceImpl implements MapLocalInfosService {
     private MapLocalInfosMapper mapLocalInfosMapper;
     @Override
     public List< Map<String, Object>>  queryAll() {
-        List< Map<String, Object>>  map = mapLocalInfosMapper.queryAll();
+        List <Map<String, Object>>  map = mapLocalInfosMapper.queryAll();
         System.out.println(map.toString());
         return  map;
     }

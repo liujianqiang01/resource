@@ -28,6 +28,7 @@ public class LocationInfoController {
     @RequestMapping("/index")
     @ResponseBody
     public Object index(){
+
         return mapLocalInfosService.queryAll();
     }
     /*
