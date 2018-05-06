@@ -17,5 +17,5 @@ public interface MapLocalInfosService {
      *新增地理位置信息
      */
     public void insertSelective(String placeid,String placeName,String placeImageUrl,String placeAddress
-            ,String placeLongitude,String placeLatitude,String placeContent,String placeIconPath)throws  Exception;
+            ,String placeLongitude,String placeLatitude,String placeContent,String placeIconPath,String title)throws  Exception;
 }

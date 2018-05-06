@@ -43,11 +43,12 @@ public class LocationInfoController {
             String placeLongitude = requset.getParameter("longitude");
             String placeLatitude = requset.getParameter("latitude");
             String placeName = requset.getParameter("nickName");
-            String placeImageUrl = requset.getParameter("imageUrl");
+            String placeImageUrl = requset.getParameter("avatarUrl");
             String placeAddress = requset.getParameter("address");
-            String placeIconPath = requset.getParameter("iconPath");
+            String placeIconPath = requset.getParameter("avatarUrl");
+            String placeTitle = requset.getParameter("tatil");
             mapLocalInfosService.insertSelective( placeid, placeName, placeImageUrl, placeAddress
-                    , placeLongitude, placeLatitude, placeContent, placeIconPath);
+                    , placeLongitude, placeLatitude, placeContent, placeIconPath,placeTitle);
             return "0";
         } catch (Exception e) {
             log.error("发布消息失败",e);

@@ -22,7 +22,7 @@ public class MapLocalInfosServiceImpl implements MapLocalInfosService {
 
     @Override
     public void insertSelective(String placeid,String placeName,String placeImageUrl,String placeAddress
-        ,String placeLongitude,String placeLatitude,String placeContent,String placeIconPath)throws  Exception {
+        ,String placeLongitude,String placeLatitude,String placeContent,String placeIconPath,String title)throws  Exception {
         MapLocalInfos mapLoaclInfo = new MapLocalInfos();
         mapLoaclInfo.setPlaceId(placeid);
         mapLoaclInfo.setPlaceName(placeName);
@@ -30,6 +30,7 @@ public class MapLocalInfosServiceImpl implements MapLocalInfosService {
         mapLoaclInfo.setPlaceLatitude(placeLatitude);
         mapLoaclInfo.setPlaceLongitude(placeLongitude);
         mapLoaclInfo.setPlaceContent(placeContent);
+        mapLoaclInfo.setPlaceTitle(title);
         mapLocalInfosMapper.insertSelective(mapLoaclInfo);
     }
 }
