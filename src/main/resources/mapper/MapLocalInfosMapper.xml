@@ -78,9 +78,45 @@
     </trim>
   </insert>
   <select id="queryAll"  resultMap="resultMap" >
-    select
-   *
-    from map_local_infos
-
+select id, place_name,place_id,place_title ,place_Content,place_Latitude,place_Longitude,place_IconPath from map_local_infos GROUP BY place_Latitude,place_Longitude
   </select>
+
+  <select id="queryAllMarkerId"  resultMap="resultMap" parameterType="java.lang.Long">
+    select
+    *
+    from map_local_infos where id=#{markerId} order by id desc
+  </select>
+
+  <select id="queryMarkerById"  resultMap="resultMap" parameterType="java.lang.Long">
+    select
+    *
+    from map_local_infos where id=#{markerId}
+  </select>
+
+  <select id="queryMarkersDetail"  resultMap="resultMap" parameterType="java.lang.Long">
+    select
+    *
+    from map_local_infos_detail where marker_id=#{markerId}
+  </select>
+
+  <insert id="insertSeDetaillective" parameterType="com.map.dao.MapLocalInfosDetail" >
+    insert into map_local_infos_detail
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="markerId != null" >
+        marker_id,
+      </if>
+      <if test="detailContent != null" >
+        detail_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="markerId != null" >
+        #{markerId,jdbcType=VARCHAR},
+      </if>
+      <if test="detailContent != null" >
+        #{detailContent,jdbcType=VARCHAR},
+      </if>
+ order by marker_id desc
+    </trim>
+  </insert>
 </mapper>
